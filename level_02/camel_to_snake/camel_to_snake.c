@@ -13,8 +13,8 @@ int main(int argc, char **argv)
     {
         while (argv[1][i])
             i++;
-        i = 0;
         result = malloc((i * 2) + 1);
+        i = 0;
         while (argv[1][i])
         {
             if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')

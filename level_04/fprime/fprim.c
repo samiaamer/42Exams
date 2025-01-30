@@ -4,9 +4,7 @@
 void fprime(unsigned int nbr)
 {
     int factor;
-    int i;
-
-    i = 0;
+    
     factor = 2;
     if (nbr == 1)
         printf("1");

@@ -20,5 +20,6 @@ t_list	*sort_list(t_list *lst, int (*cmp)(int, int))
         else
             current = current->next;
     }
+    lst = tmp;
     return (lst);
 }

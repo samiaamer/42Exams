@@ -3,20 +3,18 @@
 
 char    *ft_strrev(char *str)
 {
-    int len;
-    int i;
+    int len = 0;
+    int i = 0;
     char tmp;
-
-    i = 0;
-    len = 0;
-    while (str[len] != '\0')
+    while (str[len])
         len++;
-    while (i < len / 2)
+    while (len > i)
     {
         tmp = str[i];
-        str[i] = str[len - 1 - i];
-        str[len - 1 - i] = tmp;
-        i++;  
+        str[i] = str[len];
+        str[len] = tmp;
+        i++;
+        len--;
     }
     return (str);
 }

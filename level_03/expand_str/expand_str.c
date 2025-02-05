@@ -3,9 +3,7 @@
 int main(int argc, char **argv)
 {
     int i;
-    int flag;
-
-    flag = 0;
+    
     i = 0;
     if (argc == 2)
     {
@@ -13,15 +11,13 @@ int main(int argc, char **argv)
             i++;
         while (argv[1][i])
         {
-           if (argv[1][i] == ' ' || argv[1][i] == '\t')
-                flag = 1;
-            else
+            if (argv[1][i] == ' ' || argv[1][i] == '\t')
             {
-                if (flag)
-                    write (1, "   ", 3);
-                flag = 0;
-                write (1, &argv[1][i], 1);
+                if (argv[1][i + 1] > 32 && argv[1][i + 1])
+                        write(1, "   ", 3);
             }
+            else if (argv[1][i] != ' ' && argv[1][i] != '\t')
+                write(1, &argv[1][i], 1);
             i++;
         }
     }

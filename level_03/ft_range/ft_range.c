@@ -1,16 +1,13 @@
 #include <stdlib.h>
 
-int     *ft_range(int min, int max)
+int     *ft_range(int start, int end)
 {
-    int n;
-    int *s;
-
-    n = max >= min ? max - min : min - max;
-    s = (int *)malloc(sizeof(int) * n);
-    if (!s)
+    int dif = (start > end) ? start - end : end - start;
+    int *m = (int *)malloc(sizeof(int) * dif);
+    if (!m)
         return (0);
-    while (max != min)
-        *s++ = max > min ? min++ : min--;
-    *s = min;
-    return (s - n);
+    while(start != end)
+        *m = start > end ? start-- : start++;
+    *m = start;
+    return (m);
 }

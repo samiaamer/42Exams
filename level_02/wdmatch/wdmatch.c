@@ -12,12 +12,8 @@ int  main(int argc, char **argv)
           i++;
         j++;
       }
-    if (argv[1][i])
-      {
-        i = 0;
-        while (argv[1][i])
-            write (1, &argv[1][i++], 1);
-      }
+    if (!av[1][i])
+            write(1, av[1], i);
   }
   write (1, "\n", 1);
   return (0);

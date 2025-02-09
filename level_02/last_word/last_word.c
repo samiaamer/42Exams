@@ -8,9 +8,9 @@ int main(int argc, char **argv)
         while (argv[1][i])
             i++;
         i--;
-        while (i >= 0 && (argv[1][i] == ' ' || argv[1][i] == '\t')
+        while (i >= 0 && (argv[1][i] == ' ' || argv[1][i] == '\t'))
             i--;
-        while (i >= 0 && (argv[1][i] != ' ' && argv[1][i] != '\t')
+        while (i >= 0 && (argv[1][i] != ' ' && argv[1][i] != '\t'))
             i--;
         i++;
         while (argv[1][i] && (argv[1][i] != ' ' && argv[1][i] != '\t'))

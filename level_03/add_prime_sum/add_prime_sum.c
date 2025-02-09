@@ -40,10 +40,10 @@ int	main (int argc, char **argv)
 {
 	if (argc == 2 && ft_atoi(argv[1]))
 	{
-		int	n = ft_atoi(atgv[1]);
+		int	n = ft_atoi(argv[1]);
 		int	i = 2;
 		int	sum = 0;
-		while (i < = n)
+		while (i <= n)
 		{
 			if (is_prime(i))
 				sum += i;

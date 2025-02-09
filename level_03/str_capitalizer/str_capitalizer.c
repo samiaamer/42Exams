@@ -3,7 +3,7 @@
 void  str_cap(char *str)
 {
   int i = 0;
-  if (str[i] >= 'a' && argv[1][i] <= 'z')
+  if (str[i] >= 'a' && str[i] <= 'z')
     str[i] -= 32;
   write (1, &str[i], 1);
   i++;
@@ -11,7 +11,7 @@ void  str_cap(char *str)
     {
       if (str[i] >= 'A' && str[i] <= 'Z')
         str[i] += 32;
-      if ((str[i] >= 'a' && srt[i] <= 'z') && (srt[i - 1] == ' '  || str[i - 1] == '\t'))
+      if ((str[i] >= 'a' && str[i] <= 'z') && (str[i - 1] == ' '  || str[i - 1] == '\t'))
         str[i] -= 32;
       write (1, &str[i], 1);
       i++;

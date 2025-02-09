@@ -1,4 +1,4 @@
-#include <unitd.h>
+#include <unistd.h>
 
 int    ft_atoi(char *str)
 {
@@ -11,9 +11,8 @@ int    ft_atoi(char *str)
     if (*str == '-')
     {
       sign = -1;
-      nbr = -nbr;
     }
-    i++;
+    str++;
   }
   while (*str >= '0' && *str <= '9')
     {

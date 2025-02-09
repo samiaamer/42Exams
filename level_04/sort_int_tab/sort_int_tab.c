@@ -1,6 +1,6 @@
 void sort_int_tab(int *tab, unsigned int size)
 {
-  unisgned int i = 0;
+  unsigned int i = 0;
   int tmp;
   while (i < (size  - 1))
     {

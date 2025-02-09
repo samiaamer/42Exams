@@ -8,7 +8,6 @@ int     ft_atoi_base(const char *str, int str_base)
     if (str[i] == '-')
         {
             n = -1;
-            
             i++;
         }
     while (str[i])

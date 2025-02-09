@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hidenp.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sabutale <sabutale@student.42.fr>          +#+  +:+       +#+        */
+/*   By: samia <samia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 18:20:15 by sabutale          #+#    #+#             */
-/*   Updated: 2025/01/29 19:17:57 by sabutale         ###   ########.fr       */
+/*   Updated: 2025/02/09 08:37:36 by samia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ int main(int argc, char **argv)
 		while (argv[1][i] && argv[2][j])
 		{
 			if (argv[1][i] == argv[2][j])
-			{
 				i++;
-			}
 			j++;
 		}
 		if (i == len)

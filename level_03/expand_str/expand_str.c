@@ -14,14 +14,15 @@ int main(int argc, char **argv)
         while (argv[1][i])
         {
             if (argv[1][i] == ' ' || argv[1][i] == '\t')
-                flag = 1;
-            else
             {
-                if (flag)
-                    write (1, "   ", 3);
-               flag = 0;
-               write(1, &argv[1][i], 1);
+                while (argv[1][i] == ' ' || argv[1][i] == '\t')
+                    i++;
+                flag = 1;
             }
+            if (flag)
+                write (1, "   ", 3);
+            flag = 0;
+            write(1, &argv[1][i], 1);
             i++;
         }
     }

@@ -1,49 +1,44 @@
 #include <unistd.h>
 
-void  write_word(char *start, char *end)
-{
-  while (start < end)
-    {
-      write(1, start, 1);
-      start++;
-    }
-}
-
 int  main(int argc, char **argv)
 {
-  if (argv > 1)
+  if (argc == 2)
   {
-    char *str;
-    char *s_w;
-    char *e_w;
-    str = argv[1];
-    while (*str == ' ' || *str == '\t')
-      str++;
-    s_w = str;
-    while (*str != ' ' || *str != '\t')
-      str++;
-    e_w = str;
-    while (*str == ' ' || *str == '\t')
-      str++;
-    if (*str)
+    int s_w;
+    int e_w;
+    int i = 0;
+    while (argv[1][i] && (argv[1][i] == ' ' || argv[1][i] == '\t'))
+      i++;
+    s_w = i;
+    while (argv[1][i] && argv[1][i] != ' ' && argv[1][i] != '\t')
+      i++;
+    e_w = i - 1;
+    while (argv[1][i] && (argv[1][i] == ' ' || argv[1][i] == '\t'))
+        i++;
+    int w_pr = 0;
+    while (argv[1][i])
     {
-      while (*str)
+        if (argv[1][i] == ' ' || argv[1][i] == '\t')
         {
-          if (*str == ' ' || *str == '\t')
-          {
-            while (*str == ' ' || *str == '\t')
-              str++;
-            if (*str)
+            while (argv[1][i] == ' ' || argv[1][i] == '\t')
+                i++;
+            if (argv[1][i])
               write (1, " ", 1);
-          }
-          else 
-          {
-            write (1, str, 1);
-            str++;
-          }
         }
-      write_word(s_w, e_w);
+        else 
+        {
+            write (1, &argv[1][i], 1);
+            i++;
+            w_pr = 1;
+        }
     }
+    if (w_pr)
+      write(1, " ", 1);
+    while(s_w <= e_w)
+      {
+          write(1, &argv[1][s_w], 1);
+          s_w++;
+      }
   }
   write (1, "\n", 1);
   return (0);
